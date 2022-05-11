@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.OptionMapper">
+
+    <resultMap id="BaseResultMap" type="com.wangpeng.pojo.po.Option">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="questionId" column="question_id" jdbcType="INTEGER"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="image" column="image" jdbcType="VARCHAR"/>
+            <result property="isRight" column="is_right" jdbcType="TINYINT"/>
+            <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+            <result property="abc" column="abc" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,question_id,content,
+        image,is_right,order_num,abc
+    </sql>
+
+    <select id="selectByQuestionId" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from t_option
+        where question_id = #{questionId,jdbcType=NUMERIC}
+    </select>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.PaperMapper">
+
+    <resultMap id="BaseResultMap" type="com.wangpeng.pojo.po.Paper">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="creator" column="creator" jdbcType="INTEGER"/>
+            <result property="questionCount" column="question_count" jdbcType="INTEGER"/>
+            <result property="totalScore" column="total_score" jdbcType="DECIMAL"/>
+            <result property="qualifyScore" column="qualify_score" jdbcType="DECIMAL"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,creator,question_count
+        total_score,qualify_score,
+        create_time,update_time
+    </sql>
+
+</mapper>

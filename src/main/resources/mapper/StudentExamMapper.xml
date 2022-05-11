@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.StudentExamMapper">
+
+    <resultMap id="BaseResultMap" type="com.wangpeng.pojo.po.StudentExam">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="studentId" column="student_id" jdbcType="INTEGER"/>
+            <result property="examId" column="exam_id" jdbcType="INTEGER"/>
+            <result property="isFinished" column="is_finished" jdbcType="TINYINT"/>
+            <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
+            <result property="finishTime" column="finish_time" jdbcType="TIMESTAMP"/>
+            <result property="score" column="score" jdbcType="DECIMAL"/>
+            <result property="totalScore" column="total_score" jdbcType="DECIMAL"/>
+            <result property="qualifyScore" column="qualify_score" jdbcType="DECIMAL"/>
+            <result property="isQualify" column="is_qualify" jdbcType="TINYINT"/>
+            <result property="isChecked" column="is_checked" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,student_id,exam_id,is_finished,start_time,finish_time,score,total_score,qualify_score
+        is_qualify,is_checked
+    </sql>
+
+</mapper>

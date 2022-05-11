@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.StudentOptionMapper">
+
+    <resultMap id="BaseResultMap" type="com.wangpeng.pojo.po.StudentOption">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="studentQuestionId" column="student_question_id" jdbcType="INTEGER"/>
+            <result property="optionId" column="option_id" jdbcType="INTEGER"/>
+            <result property="isChecked" column="is_checked" jdbcType="TINYINT"/>
+            <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+            <result property="abc" column="abc" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,student_question_id,option_id,
+        is_checked,order_num,abc
+    </sql>
+</mapper>

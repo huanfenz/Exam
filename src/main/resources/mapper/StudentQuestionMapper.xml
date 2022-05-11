@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.StudentQuestionMapper">
+
+    <resultMap id="BaseResultMap" type="com.wangpeng.pojo.po.StudentQuestion">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="studentExamId" column="student_exam_id" jdbcType="INTEGER"/>
+            <result property="questionId" column="question_id" jdbcType="INTEGER"/>
+            <result property="type" column="type" jdbcType="TINYINT"/>
+            <result property="score" column="score" jdbcType="DECIMAL"/>
+            <result property="gotScore" column="got_score" jdbcType="DECIMAL"/>
+            <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+            <result property="answer" column="answer" jdbcType="VARCHAR"/>
+            <result property="isAnswered" column="is_answered" jdbcType="TINYINT"/>
+            <result property="isRight" column="is_right" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,student_exam_id,question_id,
+        type,score,got_score,order_num,
+        answer,is_answered,is_right
+    </sql>
+</mapper>

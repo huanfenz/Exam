@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.QuestionMapper">
+
+    <resultMap id="BaseResultMap" type="Question">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="repoId" column="repo_id" jdbcType="INTEGER"/>
+        <result property="chapterId" column="chapter_id" jdbcType="INTEGER"/>
+        <result property="type" column="type" jdbcType="INTEGER"
+                typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="image" column="image" jdbcType="VARCHAR"/>
+        <result property="answer" column="answer" jdbcType="VARCHAR"/>
+        <result property="answerImage" column="answer_image" jdbcType="VARCHAR"/>
+        <result property="analysis" column="analysis" jdbcType="VARCHAR"/>
+        <result property="analysisImage" column="analysis_image" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <resultMap id="QuestionVOMap" type="com.wangpeng.pojo.vo.QuestionVO">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="repoId" column="repo_id" jdbcType="INTEGER"/>
+        <result property="repoName" column="repo_name" jdbcType="VARCHAR"/>
+        <result property="chapterId" column="chapter_id" jdbcType="INTEGER"/>
+        <result property="chapterName" column="chapter_name" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"
+                typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="image" column="image" jdbcType="VARCHAR"/>
+        <result property="answer" column="answer" jdbcType="VARCHAR"/>
+        <result property="answerImage" column="answer_image" jdbcType="VARCHAR"/>
+        <result property="analysis" column="analysis" jdbcType="VARCHAR"/>
+        <result property="analysisImage" column="analysis_image" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <collection property="options" ofType="Option" javaType="ArrayList" column="id"
+        select="com.wangpeng.mapper.OptionMapper.selectByQuestionId">
+        </collection>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ${alias}.id,${alias}.repo_id,${alias}.chapter_id,${alias}.type,
+        ${alias}.content,${alias}.image,${alias}.answer,${alias}.answer_image,
+        ${alias}.remark,${alias}.analysis,${alias}.analysis_image,
+        ${alias}.create_time,${alias}.update_time
+    </sql>
+
+    <select id="getQuestionVOPage" resultMap="QuestionVOMap">
+        select <include refid="Base_Column_List"><property name="alias" value="q"/></include>,
+               r.name as repo_name, c.name as chapter_name
+        from t_question q
+        left join t_repo r on q.repo_id = r.id
+        left join t_chapter c on q.chapter_id = c.id
+        <where>
+            <if test="repoId != null">
+                and q.repo_id = #{repoId}
+            </if>
+            <if test="chapterId != null">
+                and q.chapter_id = #{chapterId}
+            </if>
+            <if test="type != null">
+                and q.type = #{type}
+            </if>
+            <if test="content != null and content != ''">
+                and q.content like concat('%',#{content},'%')
+            </if>
+            <if test="list != null and list.size > 0">
+                and q.id not in
+                <foreach collection="list" open="(" close=")" item="curId" separator=",">
+                    #{curId}
+                </foreach>
+            </if>
+        </where>
+        order by q.id ASC
+    </select>
+
+    <select id="getQuestionVO" resultMap="QuestionVOMap">
+        select <include refid="Base_Column_List"><property name="alias" value="q"/></include>,
+        r.name as repo_name, c.name as chapter_name
+        from t_question q
+        left join t_repo r on q.repo_id = r.id
+        left join t_chapter c on q.chapter_id = c.id
+        <where>
+            <if test="repoId != null">
+                and q.repo_id = #{repoId}
+            </if>
+            <if test="chapterId != null">
+                and q.chapter_id = #{chapterId}
+            </if>
+            <if test="type != null">
+                and q.type = #{type}
+            </if>
+            <if test="content != null and content != ''">
+                and q.content like concat('%',#{content},'%')
+            </if>
+        </where>
+        order by q.id ASC
+    </select>
+
+    <select id="selectQuestionsByRandom" resultMap="QuestionVOMap">
+        select <include refid="Base_Column_List"><property name="alias" value="q"/></include>,
+        r.name as repo_name, c.name as chapter_name
+        from t_question q
+        left join t_repo r on q.repo_id = r.id
+        left join t_chapter c on q.chapter_id = c.id
+        <where>
+            <if test="repoId != null">
+                and q.repo_id = #{repoId}
+            </if>
+            <if test="chapterId != null">
+                and q.chapter_id = #{chapterId}
+            </if>
+            <if test="typeId != null">
+                and q.type = #{typeId}
+            </if>
+            <if test="list != null and list.size > 0">
+                and q.id not in
+                <foreach collection="list" open="(" close=")" item="curId" separator=",">
+                    #{curId}
+                </foreach>
+            </if>
+        </where>
+        order by rand()
+        limit #{quantity}
+    </select>
+</mapper>

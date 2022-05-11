@@ -1,0 +1,55 @@
+# 我的配置
+wangpeng:
+  address: localhost
+  resource-path: D:/resource-path
+# 服务器配置
+server:
+  port: 8093
+  servlet:
+    context-path: /
+  compression:
+    # 开启gzip压缩
+    enabled: true
+    mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
+# spring配置
+spring:
+  servlet:
+    multipart:
+      # 关闭默认的multipart
+      enabled: false
+      # 上传文件大小限制
+      max-file-size: 10MB
+      max-request-size: 100MB
+  # 数据源配置
+  datasource:
+    # 数据源类型
+    type: com.zaxxer.hikari.HikariDataSource
+    # 驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库信息
+    url: jdbc:mysql://localhost:3306/exam?characterEncoding=utf-8&useSSL=false
+    username: 输入数据库配置
+    password: 输入数据库配置
+  # Redis 配置
+  redis:
+    host: 输入redis配置
+    port: 输入redis配置
+    password: 输入redis配置
+    lettuce:
+      shutdown-timeout: 100
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    # 显示日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 配置类型别名所对应的包
+  type-aliases-package: com.wangpeng.pojo
+  # 扫描通用枚举的包
+  type-enums-package: com.wangpeng.pojo.enums
+# 阿里云oss
+aliyun:
+  endpoint: http://oss-cn-hangzhou.aliyuncs.com
+  accessKeyId: 输入阿里云的keyId
+  accessKeySecret: 输入阿里云的KeySecret
+  bucket: wangpeng-imgsubmit
+  rootPath: Exam

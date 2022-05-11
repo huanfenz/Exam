@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.PaperQuestionMapper">
+
+    <resultMap id="BaseResultMap" type="com.wangpeng.pojo.po.PaperQuestion">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="paperId" column="paper_id" jdbcType="INTEGER"/>
+            <result property="questionId" column="question_id" jdbcType="INTEGER"/>
+            <result property="score" column="score" jdbcType="DECIMAL"/>
+            <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,paper_id,question_id,
+        score,order_num
+    </sql>
+</mapper>

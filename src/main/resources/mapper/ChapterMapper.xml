@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangpeng.mapper.ChapterMapper">
+
+    <resultMap id="BaseResultMap" type="com.wangpeng.pojo.po.Chapter">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="repoId" column="repo_id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="sigleCount" column="sigle_count" jdbcType="INTEGER"/>
+            <result property="multiCount" column="multi_count" jdbcType="INTEGER"/>
+            <result property="judgeCount" column="judge_count" jdbcType="INTEGER"/>
+            <result property="blankCount" column="blank_count" jdbcType="INTEGER"/>
+            <result property="writeCount" column="write_count" jdbcType="INTEGER"/>
+            <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,repo_id,name,order_num
+    </sql>
+</mapper>
