@@ -6,9 +6,9 @@
 
 在线考试系统是我的毕设项目，后端使用SpringBoot+Mybatis，前端使用Vue+ElementUI，数据库使用MySQL。
 
-功能和界面有所参考该项目https://gitee.com/davz/yf-exam-lite。
+功能和界面有所参考该项目https://gitee.com/davz/yf-exam-lite
 
-前端在这：https://github.com/huanfenz/ExamVue。
+前端在这：https://github.com/huanfenz/ExamVue
 
 ## 环境介绍
 
