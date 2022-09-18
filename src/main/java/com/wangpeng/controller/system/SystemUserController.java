@@ -48,6 +48,24 @@ public class SystemUserController {
     }
 
     /**
+     * 检查验证码
+     * @param key
+     * @param code
+     * @return
+     */
+    private BaseResult checkCode(String key, String code) {
+        String rightCode = userService.redisGetCode(key);    // 取正确的验证码，总是小写
+        userService.redisRemoveCode(key);    // 移除redis中的验证码
+        if (rightCode == null) {    // key失效
+            return BaseResult.errorMsg("验证码失效");
+        }
+        if (!rightCode.equals(code)) {  // 验证码不正确
+            return BaseResult.errorMsg("验证码错误");
+        }
+        return BaseResult.success();
+    }
+
+    /**
      * 登录
      * @param loginDTO
      * @return
@@ -62,14 +80,8 @@ public class SystemUserController {
         code = code.toLowerCase(); // 转换成小写
 
         // 检查验证码
-        String rightCode = userService.redisGetCode(key);    // 取正确的验证码，总是小写
-        userService.redisRemoveCode(key);    // 移除redis中的验证码
-        if (rightCode == null) {    // key失效
-            return BaseResult.errorMsg("验证码失效");
-        }
-        if (!rightCode.equals(code)) {  // 验证码不正确
-            return BaseResult.errorMsg("验证码错误");
-        }
+        BaseResult res = checkCode(key, code);
+        if (res.getStatus() != 200) return res;
 
         // 检查用户名
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
@@ -146,14 +158,9 @@ public class SystemUserController {
         String key = registerDTO.getKey();
         String code = registerDTO.getCode().toLowerCase();
 
-        String rightCode = userService.redisGetCode(key);    // 取正确的验证码，总是小写
-        userService.redisRemoveCode(key);    // 移除redis中的验证码
-        if (rightCode == null) {    // key失效
-            return BaseResult.errorMsg("验证码失效");
-        }
-        if (!rightCode.equals(code)) {  // 验证码不正确
-            return BaseResult.errorMsg("验证码错误");
-        }
+        // 检查验证码
+        BaseResult res = checkCode(key, code);
+        if (res.getStatus() != 200) return res;
 
         // 检查账号是否重复
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();

@@ -57,5 +57,9 @@ public interface UserService extends IService<User> {
      */
     User checkExistsUsername(String username);
 
+    /**
+     * 删除用户
+     * @param user
+     */
     void deleteUser(User user);
 }
