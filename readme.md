@@ -8,6 +8,8 @@
 
 前端工程在这：https://github.com/huanfenz/ExamVue
 
+**觉得不错的小伙伴可以点下小星星。**
+
 ## 环境介绍
 
 | 名称     | 描述                                       |
