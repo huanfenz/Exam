@@ -4,7 +4,7 @@
 
 ## 项目介绍
 
-在线考试系统是我的毕设项目，后端使用SpringBoot+Mybatis，前端使用Vue+ElementUI，数据库使用MySQL。
+在线考试系统后端使用SpringBoot+Mybatis，前端使用Vue+ElementUI，数据库使用MySQL。
 
 ## 环境介绍
 
@@ -16,13 +16,18 @@
 | Web服务器 | SpringBoot内嵌的Tomcat                      |
 | 数据库    | MySQL 5.7                                |
 
-## 搭建步骤
+## 运行步骤
 
-1、数据库导入，新建数据库exam，将`exam.sql`文件导入并运行。
-
-2、打开项目，打开`src/main/resources/baseApplication.yaml`，修改配置文件，并将文件名改为application.yaml。
-
-3、运行项目
+1. 数据库导入，新建数据库exam，将`exam.sql`文件导入并运行。
+2. 打开项目，打开`src/main/resources/baseApplication.yaml`，修改配置文件，并将文件名改为application.yaml。
+   1. 配置 MySQL 数据库
+   2. 配置 Redis
+   3. 配置阿里云 OSS
+3. 运行后端工程。
+   1. SpringBoot 工程运行
+4. 运行前端工程。
+   1. `npm install`
+   2. `npm run dev`
 
 ## 项目截图
 
@@ -46,7 +51,9 @@
 
 ## 演示地址
 
-项目演示地址：http://47.97.104.230:8093/
+> 为节省服务器资源，暂不开放
+
+项目演示地址：http://localhost:8093/
 
 管理员账号`admin`，密码`admin`
 
@@ -65,4 +72,3 @@
 我的联系方式，欢迎联系我：
 
 * 邮箱：`huanfenz@qq.com`
-* QQ：`894176237`
