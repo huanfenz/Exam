@@ -5,6 +5,7 @@
 ## 项目介绍
 
 在线考试系统后端使用SpringBoot+Mybatis，前端使用Vue+ElementUI，数据库使用MySQL。
+前端工程：https://github.com/huanfenz/ExamVue
 
 ## 环境介绍
 
