@@ -75,9 +75,9 @@
 
 ![image](https://github.com/huanfenz/Exam/assets/49386166/0c87df7a-bf1d-43c6-ad26-ed802c7d6001)
 
-### ER 图：
+### ER 图
 
-省略属性。
+省略属性：
 
 ![image](https://github.com/huanfenz/Exam/assets/49386166/25297d6d-ed7c-42e5-be8f-f9754a9e16a3)
 
