@@ -65,6 +65,8 @@
 
 业务流程：
 
+<img src="https://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202305182249469.png" alt="image-20230518224949291" style="zoom: 50%;" />
+
 功能模块：
 
 技术架构：
