@@ -63,13 +63,14 @@
 
 ## 项目描述
 
-业务流程：
-
-<img src="https://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202305182249469.png" alt="image-20230518224949291" style="zoom: 20%;" />
-
 功能模块：
 
+![image](https://github.com/huanfenz/Exam/assets/49386166/4c531e82-7213-43a0-a294-8e0f4bb5620b)
+
 技术架构：
+
+![image](https://github.com/huanfenz/Exam/assets/49386166/0c87df7a-bf1d-43c6-ad26-ed802c7d6001)
+
 
 ## 联系方式
 
