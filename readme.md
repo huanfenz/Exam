@@ -65,7 +65,7 @@
 
 业务流程：
 
-<img src="https://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202305182249469.png" alt="image-20230518224949291" style="zoom: 50%;" />
+<img src="https://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202305182249469.png" alt="image-20230518224949291" style="zoom: 20%;" />
 
 功能模块：
 
