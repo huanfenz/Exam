@@ -63,7 +63,17 @@
 
 ## 项目描述
 
-暂略
+业务流程：
+
+![image](https://github.com/huanfenz/Exam/assets/49386166/2d74ba19-90fd-4562-b2b8-4b17ab605658)
+
+功能模块：
+
+![image](https://github.com/huanfenz/Exam/assets/49386166/c46065f6-d00b-45d3-b51c-f8f2e856bffa)
+
+技术架构：
+
+![image](https://github.com/huanfenz/Exam/assets/49386166/98bfea4b-ce5e-4d6e-923f-0db4790e43a9)
 
 ## 联系方式
 
