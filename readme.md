@@ -53,7 +53,7 @@
 
 ## 演示地址
 
-项目演示地址：[点击进入](http://47.97.104.230:8093/)
+项目演示地址：[http://exam.huanfenz.top/](http://exam.huanfenz.top/)
 
 管理员账号`admin`，密码`admin`
 
