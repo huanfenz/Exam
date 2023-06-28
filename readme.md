@@ -35,19 +35,23 @@
 
 登录界面
 
-![1](http://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202205111254004.png)
+![ex1](https://github.com/huanfenz/Exam/assets/49386166/d3501d90-478d-47dc-a06f-8d6ba48a9c21)
+
 
 题目管理
 
-![2](http://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202205111255314.png)
+![ex2](https://github.com/huanfenz/Exam/assets/49386166/95249a07-10c4-4020-af6a-86b8dc15410e)
+
 
 组卷界面
 
-![3](http://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202205111256158.png)
+![ex3](https://github.com/huanfenz/Exam/assets/49386166/8caf805f-35b6-491b-81d8-07eaa25968a7)
+
 
 考试界面
 
-![4](http://wangpeng-imgsubmit.oss-cn-hangzhou.aliyuncs.com/img/202205111257098.png)
+![ex4](https://github.com/huanfenz/Exam/assets/49386166/2c59cc23-9007-48ec-8ea7-fc056bc479e1)
+
 
 更多功能就在演示地址自己看吧！:smile:
 
@@ -84,7 +88,7 @@
 
 ## 联系方式
 
-我的博客地址：[个人博客](http://huanfenz.top)，[CSDN博客](https://blog.csdn.net/qq_34245098)。欢迎大家来踩。
+我的博客地址：[个人博客](http://huanfenz.top)。欢迎大家来踩。
 
 我的联系方式，欢迎联系我：
 
