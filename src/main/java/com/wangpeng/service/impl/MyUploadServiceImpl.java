@@ -57,7 +57,14 @@ public class MyUploadServiceImpl implements MyUploadService {
         // 关闭OSSClient。
         ossClient.shutdown();
 
-        return "https://" + bucket + ".oss-cn-hangzhou.aliyuncs.com/" + rootPath + "/" + dirName + "/" + fileName;
+        // 获取类似于 oss-cn-hangzhou.aliyuncs.com 的部分
+        int doubleSlashIndex = endpoint.indexOf("//");
+        if (doubleSlashIndex == -1) {
+            throw new RuntimeException("endpoint 配置错误");
+        }
+        String webSite = endpoint.substring(doubleSlashIndex + 2);
+
+        return "https://" + bucket + "." + webSite + "/" + rootPath + "/" + dirName + "/" + fileName;
     }
 
     @Override
